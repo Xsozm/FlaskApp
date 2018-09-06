@@ -14,7 +14,9 @@ mysql = MySQL()
 
 
 
-
+# Database Name = Flask
+# Database User =root
+# Database Password =''
 # MySQL configurations
 app.config['MYSQL_DATABASE_USER'] = 'root'
 app.config['MYSQL_DATABASE_PASSWORD'] = ''
@@ -30,8 +32,6 @@ mysql.init_app(app)
 #     Author = db.Column(db.String(60))
 #     title = db.Column(db.String)
 #     body = db.Column(db.String)
-
-
 
 conn = mysql.connect()
 cursor = conn.cursor()
@@ -62,9 +62,7 @@ def create():
 @app.route('/store',methods=['POST'])
 
 def store():
-   if request.method == 'POST':
       result = request.form
-
       Author = result['Author']
       title = result['title']
       body =result['body']
@@ -72,6 +70,7 @@ def store():
       conn.commit();
       return redirect("/posts", code=200)
       cursor.close()
+
 
 
 
