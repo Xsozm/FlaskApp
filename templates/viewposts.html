@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="card">
+              <ol>
+
+
+              {% for post in posts %}
+              <li>
+
+
+                <div class="card-body">
+                      <div class="form-group">
+                          <h3>Author</h3>  <label class="form-control" type="text" name="Author" >{{post[1]}}</label>
+                      </div>
+                        <div class="form-group">
+                          <h3>Title<h3/>  <label class="form-control"  name="title" >{{post[2]}}</label>
+                        </div>
+                        <h3>Body<h3/>
+                        <div class="form-control">
+                            {{post[3]}}
+                        </div>
+
+                </div>
+                </li>
+                {% endfor %}
+  </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- {% for post in posts %}
+
+        <p>{{ post[0] }}</p>
+          <p>{{ post[1] }}</p>
+            <p>{{ post[2] }}</p>
+    {% endfor %} -->
+
+
+    {% endblock %}
