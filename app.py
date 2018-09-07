@@ -68,7 +68,7 @@ def store():
       body =result['body']
       cursor.execute('INSERT INTO posts (Author,title,body) VALUES (%s, %s,%s)', (Author, title,body))
       conn.commit();
-      return redirect("/posts", code=200)
+      return redirect(url_for('posts'))
       cursor.close()
 
 
